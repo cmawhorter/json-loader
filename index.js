@@ -4,7 +4,11 @@
 */
 module.exports = function(source) {
 	this.cacheable && this.cacheable();
-	var value = typeof source === "string" ? JSON.parse(source) : source;
+	var parsed = typeof source === "string" ? JSON.parse(source) : source;
+	var value = {};
+	for (var k in parsed) {
+		if (k[0] !== "_") value[k] = parsed[k];
+	}
 	this.value = [value];
 	return "module.exports = " + JSON.stringify(value) + ";";
 }
