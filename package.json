@@ -1,5 +1,5 @@
 {
-  "name": "json-loader",
+  "name": "package-json-loader",
   "version": "0.5.4",
   "author": "Tobias Koppers @sokra",
   "description": "json loader module for webpack",
